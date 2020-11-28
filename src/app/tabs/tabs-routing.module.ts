@@ -12,14 +12,18 @@ const routes: Routes = [
         loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'agregar/:listaId',
+        loadChildren: () => import('../pages/agregar/agregar.module').then( m => m.AgregarPageModule)
       },
       {
-        path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
+        path: 'tab2',
+        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+      }, 
+      {
+        path: 'agregar/:listaId',
+        loadChildren: () => import('../pages/agregar/agregar.module').then( m => m.AgregarPageModule)
       }
+    
     ]
   },
   {
